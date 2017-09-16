@@ -1,0 +1,53 @@
+.App {
+  width: 100%;
+  min-height: 100%;
+}
+
+.headerContainer {
+  padding-top: 150px;
+}
+
+.headerText {
+  font-size: 60px !important;
+  color: orange !important;
+}
+
+.headerBody {
+  font-size: 22px;
+  color: grey;
+  max-width: 600px;
+}
+
+.featuresContainer {
+  margin: auto;
+  font-size: 16px;
+  padding-top: 30px;
+}
+
+.installContainer {
+  padding-top: 40px;
+}
+
+.installButton {
+  width: 400px;
+}
+
+.left-column {
+  padding-top: 230px;
+  padding-right: 150px !important;
+}
+
+.stats {
+
+}
+
+.statistics {
+  float: right !important;
+}
+
+.footer {
+  font-size: 18px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 100px;
+}
