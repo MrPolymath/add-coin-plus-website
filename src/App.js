@@ -4,7 +4,12 @@ import { Button, Container, Header, List, Message } from 'semantic-ui-react'
 import { Grid } from 'semantic-ui-react'
 import Stats from './Stats'
 
+const chrome   = navigator.userAgent.indexOf('Chrome') > -1;
+const firefox  = navigator.userAgent.indexOf('Firefox') > -1;
+const pluginLink = firefox ? "https://firefox.com" : "https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb"
+
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -42,7 +47,7 @@ class App extends Component {
               </Container>
               {/*  */}
               <Container className="installContainer">
-                <a rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/adblock-plus/cfhdojbkjhnklbpkdaibdccddilifddb">
+                <a rel="chrome-webstore-item" href={pluginLink}>
                   <Button color="green" className="installButton">
                     Install the Extension
                   </Button>
@@ -58,7 +63,7 @@ class App extends Component {
                 How do we do it?
               </Message.Header>
               <p>
-                When you Start Addcoin Plus we start a background process that is minning a cryptocurrency called Monero. We automatically adjust the CPU usage to make sure it doesn't affect you in any way.
+                When you run Addcoin Plus we start a background process that is minning a cryptocurrency called Monero. We automatically adjust the CPU usage to make sure it doesn't affect you in any way.
               </p>
             </Message>
           </Grid.Row>
