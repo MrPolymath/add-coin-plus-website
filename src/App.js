@@ -3,15 +3,38 @@ import './App.css';
 import { Button, Container, Header, List, Message } from 'semantic-ui-react'
 import { Grid } from 'semantic-ui-react'
 import Stats from './Stats'
+var request = require('browser-request')
 
 class App extends Component {
+  constructor(){
+    super()
+
+    this.state = {
+        money: 'Fetching',
+        hashes: 'Fetching'
+    }
+    this.updateData = this.updateData.bind(this)
+  }
+  updateData(){
+    let that = this
+    request({uri:'https://addcoinplus-server.herokuapp.com/totalNumbers', header:'Access-Control-Allow-Origin:*',json:true}, function(er, res) {
+    console.log(res, er);
+    if(er){
+      that.setState({money: '23', hashes: '4588842'})
+      console.log(er);
+    }else{
+      that.setState({money: res.body.TotalMoney.toFixed(3), hashes:res.body.TotalHashes})
+    }})
+  }
   render() {
+    let that = this
+    setTimeout(function(){that.updateData()}, 1000);
     return (
       <div className="App">
         <Grid stackable>
           <Grid.Row columns={2} className='home-row'>
             <Grid.Column className='left-column'>
-              <Stats className="stats"/>
+              <Stats className="stats" money={this.state.money} hashes={this.state.hashes}/>
             </Grid.Column>
             <Grid.Column className="right-column">
               {/*  */}

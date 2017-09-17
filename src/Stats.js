@@ -1,10 +1,10 @@
 import React from 'react';
 import { Statistic } from 'semantic-ui-react'
 
-const Stats = () => {
+const Stats = function(props) {
   const items = [
-    { label: 'Total H', value: '4054' },
-    { label: 'Total $', value: '$15' },
+    { label: 'Total KH', value: props.hashes/1000 },
+    { label: 'Total $', value: '$'+ props.money },
   ]
   return (
     <div>
