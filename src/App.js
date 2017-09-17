@@ -5,7 +5,7 @@ import { Grid } from 'semantic-ui-react'
 import Stats from './Stats'
 var request = require('browser-request')
 
-const chrome   = navigator.userAgent.indexOf('Chrome') > -1;
+// const chrome   = navigator.userAgent.indexOf('Chrome') > -1;
 const firefox  = navigator.userAgent.indexOf('Firefox') > -1;
 const pluginLink = firefox ? "https://firefox.com" : "https://chrome.google.com/webstore/detail/addcoin-plus/mclcnpebabomakkfcldfiiglfokllcpa"
 
@@ -15,18 +15,18 @@ class App extends Component {
     super()
 
     this.state = {
-        money: 'Fetching',
-        hashes: 'Fetching'
+        money: 0.000,
+        hashes: 0.00
     }
     this.updateData = this.updateData.bind(this)
   }
   updateData(){
     let that = this
     request({uri:'https://addcoinplus-server.herokuapp.com/totalNumbers', header:'Access-Control-Allow-Origin:*',json:true}, function(er, res) {
-    console.log(res, er);
+    // console.log(res, er);
     if(er){
       that.setState({money: '23', hashes: '4588842'})
-      console.log(er);
+      // console.log(er);
     }else{
       that.setState({money: res.body.TotalMoney.toFixed(3), hashes:res.body.TotalHashes})
     }})
