@@ -48,7 +48,7 @@ class App extends Component {
                   Addcoin Plus
                 </Header>
                 <p className="headerBody">
-                  Donate money to Organizations while you navigate without even realizing you are.
+                  Make money for charities while you navigate on the browser by sharing spare CPU.
                 </p>
               </Container>
               {/*  */}
