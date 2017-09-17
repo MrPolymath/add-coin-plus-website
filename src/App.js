@@ -6,8 +6,9 @@ import Stats from './Stats'
 var request = require('browser-request')
 
 // const chrome   = navigator.userAgent.indexOf('Chrome') > -1;
-const firefox  = navigator.userAgent.indexOf('Firefox') > -1;
-const pluginLink = firefox ? "https://firefox.com" : "https://chrome.google.com/webstore/detail/addcoin-plus/mclcnpebabomakkfcldfiiglfokllcpa"
+// const firefox  = navigator.userAgent.indexOf('Firefox') > -1;
+// const pluginLink = firefox ? "https://firefox.com" : "https://chrome.google.com/webstore/detail/addcoin-plus/mclcnpebabomakkfcldfiiglfokllcpa"
+const pluginLink = "https://chrome.google.com/webstore/detail/addcoin-plus/mclcnpebabomakkfcldfiiglfokllcpa"
 
 class App extends Component {
 
@@ -72,7 +73,7 @@ class App extends Component {
               <Container className="installContainer">
                 <a rel="chrome-webstore-item" href={pluginLink}>
                   <Button color="green" className="installButton">
-                    Install the Extension
+                    Install the Chrome Extension
                   </Button>
                 </a>
               </Container>
