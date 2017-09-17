@@ -86,7 +86,7 @@ class App extends Component {
                 How do we do it?
               </Message.Header>
               <p>
-                When you run Addcoin Plus we start a background process that is minning a cryptocurrency called Monero. We automatically adjust the CPU usage to make sure it doesn't affect you in any way.
+                When you run Addcoin Plus we start a background process that is mining a cryptocurrency called Monero. We automatically adjust the CPU usage to make sure it doesn't affect you in any way.
               </p>
             </Message>
           </Grid.Row>
